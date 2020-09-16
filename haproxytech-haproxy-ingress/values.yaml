@@ -18,6 +18,7 @@ controller:
   image:
     repository: haproxytech/kubernetes-ingress
     pullPolicy: IfNotPresent
+    pullSecret: secretName
 
     # default is Chart.appVersion
     # tag: ""

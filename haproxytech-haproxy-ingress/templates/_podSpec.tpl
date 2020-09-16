@@ -1,5 +1,7 @@
 {{- define "haproxytech-ingress.podSpec" -}}
       serviceAccountName: {{ template "haproxytech-ingress.serviceAccountName" . }}
+      imagePullSecrets:
+        - name: {{ .Values.controller.image.pullSecret }}
       containers:
       - name: haproxy-ingress
         image:  "{{ .Values.controller.image.repository }}:{{ template "haproxytech-ingress.tag" . }}"
